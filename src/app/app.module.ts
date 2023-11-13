@@ -8,6 +8,9 @@ import { CvListComponent } from './cvTech/cv-list/cv-list.component';
 import { CvCardComponent } from './cvTech/cv-card/cv-card.component';
 import { CvItemComponent } from './cvTech/cv-item/cv-item.component';
 import {NgOptimizedImage} from "@angular/common";
+import { MiniWordComponent } from './miniWord/mini-word/mini-word.component';
+import {FormsModule} from "@angular/forms";
+import { RainbowDirective } from './directives/rainbow.directive';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,15 @@ import {NgOptimizedImage} from "@angular/common";
     CvComponent,
     CvListComponent,
     CvCardComponent,
-    CvItemComponent
+    CvItemComponent,
+    MiniWordComponent,
+    RainbowDirective
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
-        NgOptimizedImage
+        NgOptimizedImage,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,21 @@
+<div class="container">
+  <p [ngStyle]="{
+    'color': color,
+    'font-size': size + 'px',
+    'font-family': fontFamily
+  }">Style this text</p>
+
+  <div class="mt-5 row align-items-center">
+    <div class="col-md-4">
+      <input class="form-control" [(ngModel)]="size" type="number" placeholder="Font Size">
+    </div>
+    <div class="col-md-4">
+      <input class="form-control" [(ngModel)]="color" type="color" placeholder="Text Color">
+    </div>
+    <div class="col-md-4">
+      <select class="form-control" [(ngModel)]="fontFamily">
+        <option *ngFor="let fontFamily of fontFamilies">{{ fontFamily }}</option>
+      </select>
+    </div>
+  </div>
+</div>
