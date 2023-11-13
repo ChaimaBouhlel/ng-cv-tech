@@ -10,18 +10,20 @@ import { CvItemComponent } from './cvTech/cv-item/cv-item.component';
 import {NgOptimizedImage} from "@angular/common";
 import { MiniWordComponent } from './miniWord/mini-word/mini-word.component';
 import {FormsModule} from "@angular/forms";
-import { RainbowDirective } from './directives/rainbow.directive';
+import {ColorChangeDirective} from './directives/rainbow.directive';
+import { RainbowTextComponent } from './miniWord/rainbow-text/rainbow-text.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CvComponent,
-    CvListComponent,
-    CvCardComponent,
-    CvItemComponent,
-    MiniWordComponent,
-    RainbowDirective
-  ],
+    declarations: [
+        AppComponent,
+        CvComponent,
+        CvListComponent,
+        CvCardComponent,
+        CvItemComponent,
+        MiniWordComponent,
+        RainbowTextComponent,
+        ColorChangeDirective
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,
