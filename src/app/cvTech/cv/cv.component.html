@@ -1,0 +1,8 @@
+<div class="row mx-4">
+  <div class="col-md-6 col-sm-3">
+    <app-cv-list (forwardCv)="onForwardCv($event)" [cvs]="cvs"></app-cv-list>
+  </div>
+  <div class="col-md-6 col-sm-9">
+    <app-cv-card [cv]="selectedCv"></app-cv-card>
+  </div>
+</div>

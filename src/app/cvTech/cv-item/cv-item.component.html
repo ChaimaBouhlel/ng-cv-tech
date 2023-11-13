@@ -1,0 +1,7 @@
+<div *ngIf="cv" (click)="onSelectCv()">
+  <img
+    src="assets/images/{{ cv.path }}"
+    alt="{{cv.name}}"
+  />
+  <span>  {{ cv.firstname }} {{ cv.name }}</span>
+</div>
