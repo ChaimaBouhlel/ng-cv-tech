@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {FontFamily} from "../model/miniWordModels";
+import {FontFamily} from "../models/miniWordModels";
 
 @Component({
   selector: 'app-mini-word',

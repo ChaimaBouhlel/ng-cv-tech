@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Cv} from "../model/cv";
+import {Cv} from "../../models/Cv";
+import {EmbaucheService} from "../../services/emauche/embauche.service";
 
 @Component({
   selector: 'app-cv-card',
@@ -11,4 +12,10 @@ export class CvCardComponent {
     required: true,
   })
   cv: Cv | null = null;
+
+  constructor(private embaucheService: EmbaucheService) {
+  }
+  embaucher(){
+    this.embaucheService.addCv(this.cv as Cv);
+  }
 }
