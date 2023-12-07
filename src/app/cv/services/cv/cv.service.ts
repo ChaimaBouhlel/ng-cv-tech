@@ -16,7 +16,11 @@ export class CvService {
   }
 
   getInitialCvs (): Cv[] {
-    console.log("in getInitialCvs")
     return this.cvs;
+  }
+
+  getCvById(id: number): Cv {
+    const index = this.cvs.findIndex((cv) => cv.id === id);
+    return this.cvs[index];
   }
 }

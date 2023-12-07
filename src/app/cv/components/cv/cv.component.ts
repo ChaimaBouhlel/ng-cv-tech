@@ -12,7 +12,6 @@ export class CvComponent {
   selectedCv: Cv | null = null;
   cvs: Cv[] = this.cvService.getInitialCvs();
   constructor() {
-    console.log('jjje')
   }
   onForwardCv(cv: Cv) {
     this.selectedCv = cv;

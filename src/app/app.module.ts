@@ -18,6 +18,7 @@ import {CvDetailComponent} from './cv/components/cv-detail/cv-detail.component';
 import {EmbaucheComponent} from "./cv/components/embauche/embauche.component";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { NotfoundComponent } from './components/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
     ColorChangeDirective,
     NavbarComponent,
     CvDetailComponent,
-    EmbaucheComponent
+    EmbaucheComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
