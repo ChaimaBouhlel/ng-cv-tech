@@ -9,7 +9,7 @@ import {CvCardComponent} from './cv/components/cv-card/cv-card.component';
 import {CvItemComponent} from './cv/components/cv-item/cv-item.component';
 import {NgOptimizedImage} from "@angular/common";
 import {MiniWordComponent} from './components/miniWord/mini-word/mini-word.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {ColorChangeDirective} from './directives/rainbow.directive';
 import {RainbowTextComponent} from './components/rainbow-text/rainbow-text.component';
 import {NavbarComponent} from './components/layout/navbar/navbar.component';
@@ -18,34 +18,41 @@ import {CvDetailComponent} from './cv/components/cv-detail/cv-detail.component';
 import {EmbaucheComponent} from "./cv/components/embauche/embauche.component";
 import {ToastrModule} from "ngx-toastr";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
-import { NotfoundComponent } from './components/notfound/notfound.component';
+import {NotfoundComponent} from './components/notfound/notfound.component';
+import {LoginComponent} from "./login/components/login.component";
+import {DefaultImagePipe} from "./cv/pipes/default-image/default-image.pipe";
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    CvComponent,
-    CvListComponent,
-    CvCardComponent,
-    CvItemComponent,
-    MiniWordComponent,
-    RainbowTextComponent,
-    ColorChangeDirective,
-    NavbarComponent,
-    CvDetailComponent,
-    EmbaucheComponent,
-    NotfoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NgOptimizedImage,
-    FormsModule,
-    ToastrModule.forRoot(),
-    ROUTING
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        CvComponent,
+        CvListComponent,
+        CvCardComponent,
+        CvItemComponent,
+        MiniWordComponent,
+        RainbowTextComponent,
+        ColorChangeDirective,
+        NavbarComponent,
+        CvDetailComponent,
+        EmbaucheComponent,
+        NotfoundComponent,
+        LoginComponent,
+        DefaultImagePipe
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        NgOptimizedImage,
+        FormsModule,
+        ToastrModule.forRoot(),
+        ROUTING,
+        HttpClientModule,
+        ReactiveFormsModule
+    ],
+    providers: [],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

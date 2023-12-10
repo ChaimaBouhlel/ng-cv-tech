@@ -4,6 +4,7 @@ import {MiniWordComponent} from "./components/miniWord/mini-word/mini-word.compo
 import {RainbowTextComponent} from "./components/rainbow-text/rainbow-text.component";
 import {CvDetailComponent} from "./cv/components/cv-detail/cv-detail.component";
 import {NotfoundComponent} from "./components/notfound/notfound.component";
+import {LoginComponent} from "./login/components/login.component";
 
 const APP_ROUTING: Routes = [
   {
@@ -16,7 +17,7 @@ const APP_ROUTING: Routes = [
   {path: '', component: CvComponent},
   {path: 'word', component: MiniWordComponent},
   {path: 'rainbow', component: RainbowTextComponent},
-  // {path: 'login', component: LoginComponent},
+  {path: 'components', component: LoginComponent},
   {path: 'NotFound', component: NotfoundComponent},
   {path: '**', component: NotfoundComponent},
 ];

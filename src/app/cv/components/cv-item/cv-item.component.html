@@ -1,6 +1,6 @@
 <div *ngIf="cv" (click)="onSelectCv()">
   <img
-    src="assets/images/{{ cv.path }}"
+    src="assets/images/{{ cv.path | defaultImage}}"
     alt="{{cv.name}}"
   />
   <span>  {{ cv.firstname }} {{ cv.name }}</span>
