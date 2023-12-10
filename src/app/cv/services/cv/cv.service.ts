@@ -35,8 +35,12 @@ export class CvService {
             }));
     }
 
-    getCvById(id: number): Cv {
-        const index = this.cvs.findIndex((cv) => cv.id === id);
-        return this.cvs[index];
+    getCvById(id: number) {
+        return this.httpClient.get<Cv>(ConstantsConfig.cvUrl + `/${id}`);
     }
+
+    deleteCv(id: number) {
+        return this.httpClient.delete(ConstantsConfig.cvUrl + `/${id}`);
+    }
+
 }
