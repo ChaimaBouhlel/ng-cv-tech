@@ -7,7 +7,7 @@ import {Cv} from "../../models/Cv";
   styleUrls: ['./cv-list.component.css']
 })
 export class CvListComponent {
-  @Input() cvs: Cv[] = [];
+  @Input() cvs: Cv[] | null = [];
   @Output()
   forwardCv = new EventEmitter();
 

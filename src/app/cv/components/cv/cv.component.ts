@@ -1,6 +1,7 @@
-import {Component, inject} from '@angular/core';
+import {Component} from '@angular/core';
 import {Cv} from "../../models/Cv";
 import {CvService} from "../../services/cv/cv.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-cv',
@@ -8,10 +9,12 @@ import {CvService} from "../../services/cv/cv.service";
   styleUrls: ['./cv.component.css']
 })
 export class CvComponent {
-  cvService = inject(CvService);
   selectedCv: Cv | null = null;
-  cvs: Cv[] = this.cvService.getInitialCvs();
-  constructor() {
+  cvs: Cv[] = this.cvService.getStaticCvs();
+  cvs$!: Observable<Cv[]>;
+  constructor(private cvService: CvService) {}
+  ngOnInit() {
+    this.cvs$ = this.cvService.getCvs();
   }
   onForwardCv(cv: Cv) {
     this.selectedCv = cv;
