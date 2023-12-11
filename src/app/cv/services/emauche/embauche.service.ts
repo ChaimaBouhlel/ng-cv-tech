@@ -1,6 +1,7 @@
 import {inject, Injectable} from '@angular/core';
 import {Cv} from '../../models/Cv';
 import {ToastrService} from 'ngx-toastr';
+import {BehaviorSubject, Observable} from "rxjs";
 
 
 @Injectable({
@@ -10,8 +11,12 @@ export class EmbaucheService {
 
   toast = inject(ToastrService)
   private embauches: Cv[] = [];
+  embauches$ : Observable<Cv[]>;
+  getEmbauches$ = new BehaviorSubject<Cv[]>([]);
+
 
   constructor() {
+    this.embauches$ = this.getEmbauches$.asObservable();
   }
 
   getCvs() {
@@ -22,6 +27,7 @@ export class EmbaucheService {
     let embauches = this.embauches;
     if (embauches.findIndex((c) => c.id == cv.id) == -1) {
       this.embauches.push(cv)
+      this.getEmbauches$.next(embauches);
       this.toast.success(`Le candidat ${cv.firstname} ${cv.name} a été ajouté`)
     } else {
       this.toast.warning(`Le candidat ${cv.firstname} ${cv.name} est déja embauché`)

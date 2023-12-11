@@ -5,12 +5,14 @@ import {RainbowTextComponent} from "./components/rainbow-text/rainbow-text.compo
 import {CvDetailComponent} from "./cv/components/cv-detail/cv-detail.component";
 import {NotfoundComponent} from "./components/notfound/notfound.component";
 import {LoginComponent} from "./login/components/login.component";
+import {cvResolver} from "./cv/resolvers/cv/cv.resolver";
+import {detailsResolver} from "./cv/resolvers/details/details.resolver";
 
 const APP_ROUTING: Routes = [
   {
     path:'cv',children: [
-      {path: '', component: CvComponent},
-      {path: ':id', component: CvDetailComponent},
+      { path: '', component: CvComponent, resolve: { cvs: cvResolver } },
+      {path: ':id', component: CvDetailComponent,  resolve: { details: detailsResolver }},
     ]
   }
   ,
