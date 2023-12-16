@@ -1,4 +1,4 @@
-import { RouterModule, Routes } from "@angular/router";
+import {RouterModule, Routes} from "@angular/router";
 import {CvComponent} from "./cv/components/cv/cv.component";
 import {MiniWordComponent} from "./components/miniWord/mini-word/mini-word.component";
 import {RainbowTextComponent} from "./components/rainbow-text/rainbow-text.component";
@@ -7,12 +7,25 @@ import {NotfoundComponent} from "./components/notfound/notfound.component";
 import {LoginComponent} from "./login/components/login.component";
 import {cvResolver} from "./cv/resolvers/cv/cv.resolver";
 import {detailsResolver} from "./cv/resolvers/details/details.resolver";
+import {MasterDetailsCvComponent} from "./cv/components/master-details-cv/master-details-cv.component";
 
 const APP_ROUTING: Routes = [
   {
-    path:'cv',children: [
-      { path: '', component: CvComponent, resolve: { cvs: cvResolver } },
-      {path: ':id', component: CvDetailComponent,  resolve: { details: detailsResolver }},
+    path: 'cv',
+    children: [
+      {path: '', component: CvComponent, resolve: {cvs: cvResolver}},
+      {
+        path: 'list',
+        component: MasterDetailsCvComponent,
+        children: [
+          {
+            path: ':id',
+            component: CvDetailComponent,
+            resolve: {cv: detailsResolver},
+          },
+        ]
+      },
+      {path: ':id', component: CvDetailComponent, resolve: {details: detailsResolver}},
     ]
   }
   ,
@@ -24,4 +37,4 @@ const APP_ROUTING: Routes = [
   {path: '**', component: NotfoundComponent},
 ];
 
-export const ROUTING =RouterModule.forRoot(APP_ROUTING);
+export const ROUTING = RouterModule.forRoot(APP_ROUTING);

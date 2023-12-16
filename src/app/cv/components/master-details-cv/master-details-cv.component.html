@@ -1,0 +1,11 @@
+<p>master-details works!</p>
+
+<div class="row">
+  <div class="col-md-6">
+    <app-cv-list [cvs]="cvs$ | async" (forwardCv)="onForwardCv($event)"></app-cv-list>
+
+  </div>
+  <div class="col">
+    <router-outlet></router-outlet>
+  </div>
+</div>

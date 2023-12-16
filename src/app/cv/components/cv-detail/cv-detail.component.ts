@@ -23,7 +23,8 @@ export class CvDetailComponent {
   }
 
   ngOnInit() {
-    // const cvId = +this.activatedRoute.snapshot.params['id'];
+
+    /*
     const cv: Cv = this.activatedRoute.snapshot.data['details'];
     this.cv = cv;
     if (cv == null) {
@@ -31,33 +32,28 @@ export class CvDetailComponent {
       this.router.navigate(['cv']);
     }
     this.cv = cv;
-    /*
-     this.cvService.getCvById(cvId).subscribe({
-         next: (cv) => (this.cv = cv),
-         error: (error) => {
-             // console.log(error);
-             this.toastr.error(`le cv n'existe pas`);
-             this.router.navigate(['cv']);
-         },
-     });
-     */
+    */
 
-    /*
-    //with subscribe
-    this.activatedRoute.params.subscribe({
-        next: (params) => {
-            const cvId = +params['id']; // Convert id to a number
-            const cv = this.cvService.getCvById(cvId);
+    // const cvId = +this.activatedRoute.snapshot.params['id'];
+    //
+    //
+    // this.cvService.getCvById(cvId).subscribe({
+    //   next: (cv) => (this.cv = cv),
+    //   error: (error) => {
+    //     // console.log(error);
+    //     this.toastr.error(`le cv n'existe pas`);
+    //     this.router.navigate(['cv']);
+    //   },
+    // });
 
-            if (cv) {
-                this.cv = cv;
-            } else {
-                this.toastr.error(`Cv with id ${cvId} not found.`);
-                this.router.navigate(['NotFound']);
-            }
-        }
-    })
-      */
+    this.activatedRoute.data.subscribe((data:any) => {
+      if (data['cv'] == null) {
+        this.toastr.error('Aucun cv trouvé');
+        this.router.navigate(['']);
+      }
+      this.cv = data['cv'];
+    });
+
   }
 
   delete() {

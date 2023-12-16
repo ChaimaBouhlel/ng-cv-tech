@@ -22,6 +22,7 @@ import {NotfoundComponent} from './components/notfound/notfound.component';
 import {LoginComponent} from "./login/components/login.component";
 import {DefaultImagePipe} from "./cv/pipes/default-image/default-image.pipe";
 import {HttpClientModule} from "@angular/common/http";
+import { MasterDetailsCvComponent } from './cv/components/master-details-cv/master-details-cv.component';
 
 @NgModule({
     declarations: [
@@ -38,7 +39,8 @@ import {HttpClientModule} from "@angular/common/http";
         EmbaucheComponent,
         NotfoundComponent,
         LoginComponent,
-        DefaultImagePipe
+        DefaultImagePipe,
+        MasterDetailsCvComponent
     ],
     imports: [
         BrowserModule,
